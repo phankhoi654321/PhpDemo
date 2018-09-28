@@ -16,10 +16,15 @@
         <div class="classynav">
             <ul>
                 <li><a href="<?php echo $_SERVER['PHP_SELF'] ?>?page=shop">Shop</a>
-                <li><a href="views/admin/index.php">Admin</a>
+                <li>
+                    <a href="<?php  if(isset($_SESSION['user_pass']))
+                                        { echo 'views/admin/index.php';} 
+                                    else { echo $_SERVER['PHP_SELF'] . '?page=login'; $_SESSION['gotoAdmin'] = true; } 
+                            ?>">Admin</a>
                 </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li style="display: <?php if(isset($_SESSION['user_pass'])) echo 'none'?>"><a href="<?php echo $_SERVER['PHP_SELF'] ?>?page=login">Login</a></li>
+                <li style="display: <?php if(isset($_SESSION['user_pass'])) echo 'none'?>"><a href="<?php echo $_SERVER['PHP_SELF'] ?>?page=register">Register</a></li>
+                <li style="display: <?php if(isset($_SESSION['user_pass'])) echo ''; else echo 'none';?>"> <a href="<?php echo $_SERVER['PHP_SELF'] ?>?page=logout"> Logout</a></li>
             </ul>
         </div>
         <!-- Nav End -->

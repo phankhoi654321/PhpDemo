@@ -1,7 +1,5 @@
 
-    <!-- ##### Right Side Cart Area ##### -->
-    <?php include('shoppingCart.php') ?>
-    <!-- ##### Right Side Cart End ##### -->
+    
 
     <?php while ($row = mysqli_fetch_array($result)) : ?>
     <!-- ##### Single Product Details Area Start ##### -->
@@ -36,3 +34,6 @@
     <!-- ##### Single Product Details Area End ##### -->
     <?php endwhile ?>
 
+<!-- ##### Right Side Cart Area ##### -->
+<?php include('shoppingCart.php') ?>
+<!-- ##### Right Side Cart End ##### -->

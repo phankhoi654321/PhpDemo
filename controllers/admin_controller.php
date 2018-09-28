@@ -1,6 +1,6 @@
 <?php
-    include '../../models/product_db.php';
-    include '../../models/category_db.php';
+    include '../../models/productModel.php';
+    include '../../models/categoryModel.php';
     // include '../../models/database.php';
     class AdminController
     {

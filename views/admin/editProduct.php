@@ -14,8 +14,6 @@
                     Basic Form Elements
                 </div>
                 <?php
-                                // $product = new ProductModel();
-                                // $product->getProductById($_GET['id']);
                                 while ($row = mysqli_fetch_array($result)):
                             ?>
                 <div class="panel-body">
