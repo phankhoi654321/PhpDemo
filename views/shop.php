@@ -1,5 +1,4 @@
 
-
     <!-- ##### Right Side Cart Area ##### -->
     <?php include('shoppingCart.php') ?>
     <!-- ##### Right Side Cart End ##### -->
@@ -171,10 +170,10 @@
                         </div>
 
                         <div class="row">
-
                             <!-- Single Product -->
                             <?php 
-                            
+                                $products8 = new ProductModel();
+                                $resultProduct = $products8->getListProduct();
                                 while($row = mysqli_fetch_array($resultProduct)):
                             ?>
                             <div class="col-12 col-sm-6 col-lg-4">
@@ -211,11 +210,6 @@
                             <?php 
                                 endwhile;
                             ?>
-
-                            
-
-                            
-
                         </div>
                     </div>
                     <!-- Pagination -->

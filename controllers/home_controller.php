@@ -12,8 +12,6 @@ include 'models/category_db.php';
                 include('views/home.php');
                 break;
             case 'shop':
-                $products1 = new ProductModel();
-                $resultProduct = $products1->getListProduct();
                 include('views/shop.php');
                 break;
             case 'singleProduct':
