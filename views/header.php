@@ -48,10 +48,20 @@ session_start();
                     <a href="#"><img src="img/core-img/heart.svg" alt=""></a>
                 </div> -->
                 <!-- User Login Info -->
-                <!-- <div class="user-login-info">
-                    <a href="#"><img src="img/core-img/user.svg" alt=""></a>
-                </div> -->
+                <div class="user-login-info" style="display: <?php if(isset($_SESSION['user_email'])) echo ''; else echo 'none'; ?>">
+                    <!-- <a href="#" style="width: 150px;" >
+                        <?php 
+                            // $name = isset($_SESSION['user_email']) ? $_SESSION['user_email'] : ''; 
+                            // if(isset($_SESSION['user_email'])) {
+                            //     echo 'Welcome' . $name;
+                            // }
+
+                        ?>
+                    </a> -->
+                    <a href="<?php echo $_SERVER['PHP_SELF'] ?>?page=logout"> Logout</a>
+                </div>
                 <!-- Cart Area -->
+                
                 <div class="cart-area">
                     <?php //include('shoppingCart.php') ?>
                     <a href="#" id="essenceCartBtn"><img src="img/core-img/bag.svg" alt=""> <span>

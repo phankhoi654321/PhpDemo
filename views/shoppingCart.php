@@ -1,8 +1,9 @@
 <?php
-    include('models/cartModel.php');
+    //include('models/cartModel.php');
+    include('controllers/cart_controller.php');
 ?>
 <?php
-    $_done=false;
+    // $_SESSION['done']=false;
 ?>
 <div class="cart-bg-overlay">
 
@@ -23,19 +24,22 @@
                 <tbody>
                 <?php
                     $cart = new CartModel();
-                    $_GET['cart'] = isset($_GET['cart']) ? $_GET['cart'] : '';
-                    if($_GET['cart'] == 'add') {
-                        $cart->add($_GET['addId']);
-                        $_done=true;
-                    } 
-                    if($_GET['cart'] == 'remove') {
-                        $cart->remove($_GET['removeId']);
-                        $_done=true;
-                    } 
-                    if($_GET['cart'] == 'delete') {
-                        $cart->delete($_GET['deleteId']);
-                        $_done=true;
-                    }
+                    // $_GET['cart'] = isset($_GET['cart']) ? $_GET['cart'] : '';
+                    // if ($_GET['cart'] == 'add') {
+                    //     $cart->add($_GET['addId']);
+                    //     $_done=true;
+                    // }
+                    // if ($_GET['cart'] == 'remove') {
+                    //     $cart->remove($_GET['removeId']);
+                    //     $_done=true;
+                    // }
+                    // if ($_GET['cart'] == 'delete') {
+                    //     $cart->delete($_GET['deleteId']);
+                    //     $_done=true;
+                    // }
+                    $carController = new CartController();
+                    $carController->checkRequest($cart);
+
                     $total = 0;
                     $item_quantity = 0;
                     // $quantity =1;
@@ -71,7 +75,7 @@
                                 <?php
                                     $total += $sub;
                                     // $_SESSION['item_total'] = $total += $sub;
-                                    $_SESSION['item_quantity'] = $item_quantity;  
+                                    $_SESSION['item_quantity'] = $item_quantity;
                                 ?>  
                                 <?php endwhile ?>
                             <?php endif ?>
@@ -98,7 +102,7 @@
 </div>
 
 <?php
-    if ($_done) {
+    if ($_SESSION['done']) {
         header("Location: " . $_SERVER['PHP_SELF'] . '?page=shop');
         exit;
     }

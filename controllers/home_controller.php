@@ -53,7 +53,8 @@ include 'models/userModel.php';
                             $errPass = "Password Wrong, please try again!";
                         }
                         if ($checkSubmit) {
-                            $_SESSION['user_pass'] = $user_pass_db;
+                            // $_SESSION['user_pass'] = $user_pass_db;
+                            $_SESSION['user_email'] = $user_email;
                             // var_dump($_SESSION['gotoAdmin']);exit;
                             if($_SESSION['gotoAdmin']) {
                                 header("Location: views/admin/index.php");
