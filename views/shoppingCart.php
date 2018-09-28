@@ -1,6 +1,5 @@
 <?php
     include('models/cartModel.php');
-    // include('models/product_db.php');
 ?>
 <?php
     $_done=false;
@@ -39,7 +38,7 @@
                     }
                     $total = 0;
                     $item_quantity = 0;
-                    $quantity =1;
+                    // $quantity =1;
                     foreach ($_SESSION as $name => $value) :
                         if ($value > 0) :
                             if (substr($name, 0, 8) == "product_") :
@@ -70,7 +69,6 @@
                                 </td>
                             </tr>
                                 <?php
-                                    $quantity++;
                                     $total += $sub;
                                     // $_SESSION['item_total'] = $total += $sub;
                                     $_SESSION['item_quantity'] = $item_quantity;  

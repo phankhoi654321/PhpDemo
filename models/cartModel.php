@@ -19,6 +19,7 @@
         {
             $_SESSION['product_' . $_GET['removeId']]--;
             if ($_SESSION['product_' . $_GET['removeId']] < 1) {
+                unset($_SESSION['item_quantity']);
                 unset($_SESSION['item_total']);
             } else {
             }
@@ -27,6 +28,7 @@
         public function delete($id)
         {
             $_SESSION['product_' . $_GET['deleteId']] = 0;
+            unset($_SESSION['item_quantity']);
             unset($_SESSION['item_total']);
         }
 
